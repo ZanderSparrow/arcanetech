@@ -4,13 +4,17 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
 import { Header } from './components/common';
+import LibraryList from './components/LibraryList';
 
 const App = () => {
-  <Provider store={createStore(reducers)}>
-    <View>
-      <Header headerText={'Arcane Technologies'} />
-    </View> 
-  </Provider> 
+  return (
+    <Provider store={createStore(reducers)}>
+      <View style={{ flex: 1 }}>
+        <Header headerText="Arcane Technologies" />
+        <LibraryList />
+      </View>
+    </Provider>
+  );
 };
 
 export default App;
