@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ListView, Text } from 'react-native';
 import { connect } from 'react-redux';
-import { Card, CardSection } from './common';
+import LibraryEntry from './LibraryEntry';
 
 class LibraryList extends Component {
+  componentWillMount() {
+    const ds = new ListView.DataSource({ 
+      rowHasChanged: (r1, r2) => r1 !== r2 
+    });
+
+    this.dataSource = ds.cloneWithRows(this.props.library)
+  }
+
+  renderRow(library) {
+    return <LibraryEntry library={library} />
+  }
+
   render() {
     return (
-      <ScrollView>
-        <Card>
-          {this.props.library.map(entry => {
-            return (<CardSection key={entry.id}>
-              <Text>{entry.title}</Text>
-            </CardSection>)
-          })}
-        </Card>
-      </ScrollView>
+      <ListView 
+        dataSource={this.dataSource}
+        renderRow={this.renderRow}
+      />
     );
   }
 };
