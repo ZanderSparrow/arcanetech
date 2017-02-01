@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "title": "Dragon Circuits",
+    "description": "Dragon fire distributed through strands of elvin steel for heating and light."
+  },
+  {
+    "id": 1,
+    "title": "Troll Bone Chalk",
+    "description": "Words written on stone with troll bones can be read in darkness."
+  },
+  {
+    "id": 2,
+    "title": "Cavern Dust",
+    "description": "Dust from the underworld sprinkled on the head at dawn induces educational visions."
+  },
+  {
+    "id": 3,
+    "title": "Warlock Moonlight",
+    "description": "When tampered with by warlocks moonlight becomes a delectable flavorant and an excellent perservative."
+  },
+  {
+    "id": 4,
+    "title": "Ghosts",
+    "description": "Can fit into tight spaces and have nimble fingers."
+  },
+  {
+    "id": 5,
+    "title": "Hag Blood Dough",
+    "description": "Stores tremendous amounts of energy that's released upon firm palpitation."
+  },
+  {
+    "id": 6,
+    "title": "Kelpy Mane Jelly",
+    "description": "Safe, biodegradable, industrial-strength lubricant."
+  },
+  {
+    "id": 7,
+    "title": "Unicorn Filings",
+    "description": "Hypnotic magnets."
+  },
+  {
+    "id": 8,
+    "title": "Cerberus Saliva",
+    "description": "Clean-burning and potent fuel."
+  }
+]
