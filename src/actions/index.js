@@ -4,3 +4,10 @@ export const selectEntry = (entryId) => {
     payload: entryId
   };
 };
+
+export const emailChanged = (email) => {
+  return {
+    type: 'email-changed',
+    payload: email
+  };
+};

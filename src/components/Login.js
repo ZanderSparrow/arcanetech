@@ -2,19 +2,24 @@ import React, { Component } from 'react';
 import { Card, CardSection, Input, Button } from './common';
 
 class Login extends Component {
+  onEmail(text) {
+
+  }
+  
   render() {
     return (
       <Card>
         <CardSection>
           <Input 
-            label={'email'}
+            label={'Email'}
             placeholder={'name@example.com'}
+            onChange={this.onEmail.bind(this)}
           />
         </CardSection>
         <CardSection>
           <Input 
             secureTextEntry
-            label={'password'}
+            label={'Password'}
             placeholder={'password'}
           />
         </CardSection>
