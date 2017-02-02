@@ -13,3 +13,10 @@ export const emailChanged = (email) => {
     payload: email
   };
 };
+
+export const passwordChanged = (password) => {
+  return {
+    type: types.PASSWORD_CHANGED,
+    payload: password
+  };
+};
