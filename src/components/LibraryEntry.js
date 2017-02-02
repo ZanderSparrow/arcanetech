@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
-import { Text, TouchableWithoutFeedback, View } from 'react-native';
+import { 
+  Text, 
+  TouchableWithoutFeedback, 
+  View,
+  LayoutAnimation,
+  UIManager } from 'react-native';
 import { connect } from 'react-redux';
 import { Card, CardSection } from './common';
 import * as actions from '../actions';
 
 class LibraryEntry extends Component {
+  componentWillUpdate(nextProps, nextState) {
+    LayoutAnimation.spring();
+  }
 
   render() {
+    UIManager.setLayoutAnimationEnabledExperimental && 
+    UIManager.setLayoutAnimationEnabledExperimental(true);
+
     let {id, title, description} = this.props.library;
+    
     return (
       <Card>
         <TouchableWithoutFeedback
