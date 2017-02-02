@@ -20,7 +20,7 @@ class LibraryEntry extends Component {
           </View>
         </TouchableWithoutFeedback>
         
-        {this.props.selection === id && <CardSection>
+        {this.props.selected && <CardSection>
                   <Text>{description}</Text>
                 </CardSection>}
       </Card>
@@ -35,9 +35,10 @@ const styles = {
   }
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+  const selected = state.selection === ownProps.library.id;
   return {
-    selection: state.selection
+    selected
   }
 };
 
