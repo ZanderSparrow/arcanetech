@@ -7,7 +7,7 @@ import {
   UIManager } from 'react-native';
 import { connect } from 'react-redux';
 import { Card, CardSection } from './common';
-import * as actions from '../actions';
+import { selectEntry } from '../actions';
 
 class LibraryEntry extends Component {
   componentWillUpdate(nextProps, nextState) {
@@ -19,7 +19,7 @@ class LibraryEntry extends Component {
     UIManager.setLayoutAnimationEnabledExperimental(true);
 
     let {id, title, description} = this.props.library;
-    
+
     return (
       <Card>
         <TouchableWithoutFeedback
@@ -54,4 +54,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 };
 
-export default connect(mapStateToProps, actions)(LibraryEntry);
+export default connect(mapStateToProps, { selectEntry })(LibraryEntry);

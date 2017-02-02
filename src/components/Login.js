@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Card, CardSection, Input, Button } from './common';
+import { emailChanged } from '../actions';
 
 class Login extends Component {
   onEmail(text) {
-
+    this.props.emailChanged(text);
   }
-  
+
   render() {
     return (
       <Card>
@@ -14,6 +16,7 @@ class Login extends Component {
             label={'Email'}
             placeholder={'name@example.com'}
             onChange={this.onEmail.bind(this)}
+            value={this.props.email}
           />
         </CardSection>
         <CardSection>
@@ -33,4 +36,10 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = state => {
+  return {
+    email: state.auth.email
+  };
+};
+
+export default connect(mapStateToProps, { emailChanged })(Login);

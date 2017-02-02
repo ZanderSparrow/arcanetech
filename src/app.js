@@ -5,12 +5,14 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 import { Header } from './components/common';
 import LibraryList from './components/LibraryList';
+import Login from './components/Login';
 
 const App = () => {
   return (
     <Provider store={createStore(reducers)}>
       <View style={{ flex: 1 }}>
         <Header headerText="Arcane Technologies" />
+        <Login />
         <LibraryList />
       </View>
     </Provider>
