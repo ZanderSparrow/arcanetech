@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scene, Router } from 'react-native-router-flux';
+import { Scene, Router, Actions } from 'react-native-router-flux';
 import Welcome from './components/Welcome';
 import Signup from './components/Signup';
 import Login from './components/Login';
@@ -17,7 +17,7 @@ const RouterComponent = () => {
       </Scene>
       <Scene key={'main'} title={"Arcane Technologies"}>
         <Scene 
-          onRight={() => console.log('right!')}
+          onRight={() => Actions.entryCreate()}
           rightTitle={'Add'}
           key={'libraryList'} 
           component={LibraryList} 
