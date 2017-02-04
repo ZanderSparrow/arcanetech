@@ -4,6 +4,8 @@ import Welcome from './components/Welcome';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import LibraryList from './components/LibraryList';
+import EntryCreate from './components/EntryCreate';
+import EntryDetail from './components/EntryDetail';
 
 const RouterComponent = () => {
   return (
@@ -20,6 +22,8 @@ const RouterComponent = () => {
           key={'libraryList'} 
           component={LibraryList} 
           title={"Library"} />
+        <Scene key={'entryCreate'} component={EntryCreate} title={'Add to the Library'} />
+        <Scene key={'entryDetail'} component={EntryDetail} title={'An Entry'} />
       </Scene>
     </Router>
   );
