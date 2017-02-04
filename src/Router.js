@@ -14,7 +14,12 @@ const RouterComponent = () => {
         <Scene key={'signup'} component={Signup} title={"Who are you?"} />
       </Scene>
       <Scene key={'main'} title={"Arcane Technologies"}>
-        <Scene key={'libraryList'} component={LibraryList} title={"Library"} />
+        <Scene 
+          onRight={() => console.log('right!')}
+          rightTitle={'Add'}
+          key={'libraryList'} 
+          component={LibraryList} 
+          title={"Library"} />
       </Scene>
     </Router>
   );
