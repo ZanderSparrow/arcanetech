@@ -10,8 +10,8 @@ const RouterComponent = () => {
     <Router sceneStyle={{ paddingTop: 65 }}>
       <Scene key={'auth'}>
         <Scene key={'welcome'} component={Welcome} title={"Arcane Technologies"} />
-        <Scene key={'signup'} component={Signup} title={"Who are you?"} />
         <Scene key={'login'} component={Login} title={"Who are you?"} />
+        <Scene key={'signup'} component={Signup} title={"Who are you?"} />
       </Scene>
       <Scene key={'main'} title={"Arcane Technologies"}>
         <Scene key={'libraryList'} component={LibraryList} title={"Library"} />
