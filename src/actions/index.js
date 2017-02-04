@@ -29,7 +29,7 @@ export const loginUser = () => {
 };
 
 const loginUserSuccess = (dispatch) => {
-  Actions.libraryList();
+  Actions.main();
 };
 
 const loginUserFail = (dispatch) => {

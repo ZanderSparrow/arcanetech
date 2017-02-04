@@ -6,8 +6,12 @@ import LibraryList from './components/LibraryList';
 const RouterComponent = () => {
   return (
     <Router>
-      <Scene key={"login"} component={Login} title={"Who are you?"} />
-      <Scene key={"libraryList"} component={LibraryList} title={"Arcane Technologies"} />
+      <Scene key={'auth'}>
+        <Scene key={'login'} component={Login} title={"Who are you?"} />
+      </Scene>
+      <Scene key={'main'} title={"Arcane Technologies"}>
+        <Scene key={'libraryList'} component={LibraryList} title={"Library"} />
+      </Scene>
     </Router>
   );
 };
