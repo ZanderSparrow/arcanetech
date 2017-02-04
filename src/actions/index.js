@@ -1,4 +1,5 @@
 import * as types from './types';
+import { Actions } from 'react-native-router-flux';
 
 export const selectEntry = (entryId) => {
   return {
@@ -19,4 +20,17 @@ export const passwordChanged = (password) => {
     type: types.PASSWORD_CHANGED,
     payload: password
   };
+};
+
+export const loginUser = () => {
+  return (dispatch) => {
+
+  };
+};
+
+const loginUserSuccess = (dispatch) => {
+  Actions.main();
+};
+
+const loginUserFail = (dispatch) => {
 };
