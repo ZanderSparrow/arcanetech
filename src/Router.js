@@ -7,7 +7,7 @@ const RouterComponent = () => {
   return (
     <Router>
       <Scene key={"login"} component={Login} title={"Who are you?"} />
-      <Scene key={"libraryList"} component={LibraryList} title={"Arcane Technologies"} initial />
+      <Scene key={"libraryList"} component={LibraryList} title={"Arcane Technologies"} />
     </Router>
   );
 };

@@ -24,12 +24,12 @@ export const passwordChanged = (password) => {
 
 export const loginUser = () => {
   return (dispatch) => {
-
+    loginUserSuccess(dispatch);
   };
 };
 
 const loginUserSuccess = (dispatch) => {
-  Actions.main();
+  Actions.libraryList();
 };
 
 const loginUserFail = (dispatch) => {
