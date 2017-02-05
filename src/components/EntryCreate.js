@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { Card, CardSection, Input, Button } from './common';
 
 class EntryCreate extends Component {
   render() {
     return (
-      <View>
-        <Text>Create an Entry</Text>
-      </View>
+      <Card>
+        <CardSection>
+          <Input 
+            label={'Name'}
+            placeholder={'Name the technology.'}
+          />
+        </CardSection>
+        <CardSection>
+          <Input 
+            label={'Function'}
+            placeholder={'Describe what the arcane technology does.'}
+          />
+        </CardSection>
+        <CardSection>
+          <Button>
+            Add to Library
+          </Button>
+        </CardSection>
+      </Card>
     );
   }
 }
