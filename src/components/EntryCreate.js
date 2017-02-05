@@ -12,7 +12,7 @@ class EntryCreate extends Component {
             label={'Name'}
             placeholder={'Name the technology.'}
             value={this.props.title}
-            onChangeText={() => entryEdit({ prop: 'title', value })}
+            onChange={value => entryEdit({ prop: 'title', value })}
           />
         </CardSection>
         <CardSection>
@@ -20,7 +20,7 @@ class EntryCreate extends Component {
             label={'Function'}
             placeholder={'Describe what the arcane technology does.'}
             value={this.props.description}
-            onChangeText={() => entryEdit({ prop: 'description', value })}
+            onChange={value => entryEdit({ prop: 'description', value })}
           />
         </CardSection>
         <CardSection>
