@@ -1,6 +1,6 @@
-import {
+import { 
   ENTRY_EDIT
-} from from './types';
+} from './types';
 
 export const entryEdit = ({ prop, value }) => {
   return {

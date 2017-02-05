@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card, CardSection, Input, Button } from './common';
-import { entryCreate } from '../actions';
+import { entryCreate, entryEdit } from '../actions';
 
 class EntryCreate extends Component {
   render() {
@@ -11,12 +11,16 @@ class EntryCreate extends Component {
           <Input 
             label={'Name'}
             placeholder={'Name the technology.'}
+            value={this.props.title}
+            onChangeText={() => entryEdit({ prop: 'title', value })}
           />
         </CardSection>
         <CardSection>
           <Input 
             label={'Function'}
             placeholder={'Describe what the arcane technology does.'}
+            value={this.props.description}
+            onChangeText={() => entryEdit({ prop: 'description', value })}
           />
         </CardSection>
         <CardSection>
@@ -29,4 +33,10 @@ class EntryCreate extends Component {
   }
 }
 
-export default connect(null, { entryCreate })(EntryCreate);
+const mapStateToProps = (state) => {
+  let { title, description } = state.entry;
+
+  return { title, description };
+};
+
+export default connect(mapStateToProps, { entryCreate, entryEdit })(EntryCreate);
