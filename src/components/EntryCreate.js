@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Card, CardSection, Input, Button } from './common';
+import { entryCreate } from '../actions';
 
 class EntryCreate extends Component {
   render() {
@@ -27,4 +29,4 @@ class EntryCreate extends Component {
   }
 }
 
-export default EntryCreate;
+export default connect(null, { entryCreate })(EntryCreate);
