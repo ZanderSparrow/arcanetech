@@ -5,8 +5,8 @@ import selection from './selection';
 import auth from './auth';
 
 export default combineReducers({
+  auth,
   library,
   entry,
-  selection,
-  auth
+  selection
 });

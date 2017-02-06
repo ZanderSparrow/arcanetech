@@ -7,7 +7,6 @@ const INITIAL_STATE = { title: '', description: '' };
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ENTRY_EDIT:
-      console.log('in the reducer');
       // paylod: { prop: 'title', value: 'Undead Brain Jelly' }
       return { ...state, [action.payload.prop]: action.payload.value };
     default:

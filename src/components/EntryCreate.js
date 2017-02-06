@@ -4,6 +4,10 @@ import { Card, CardSection, Input, Button } from './common';
 import { entryCreate, entryEdit } from '../actions';
 
 class EntryCreate extends Component {
+  onEntryChange(prop, value) {
+    this.props.entryEdit({ prop, value });
+  }
+
   render() {
     return (
       <Card>
@@ -12,7 +16,7 @@ class EntryCreate extends Component {
             label={'Name'}
             placeholder={'Name the technology.'}
             value={this.props.title}
-            onChange={value => entryEdit({ prop: 'title', value })}
+            onChange={this.onEntryChange.bind(this, 'title')}
           />
         </CardSection>
         <CardSection>
@@ -20,7 +24,7 @@ class EntryCreate extends Component {
             label={'Function'}
             placeholder={'Describe what the arcane technology does.'}
             value={this.props.description}
-            onChange={value => entryEdit({ prop: 'description', value })}
+            onChange={this.onEntryChange.bind(this, 'description')}
           />
         </CardSection>
         <CardSection>
