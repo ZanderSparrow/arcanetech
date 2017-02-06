@@ -4,12 +4,36 @@ import {
 } from './types';
 import { baseUrl } from '../config';
 
+export const getLibrary = () => {
+  return (dispatch) => {
+    let url = baseUrl + '/entries';
+    fetch(url)
+      .then((response) => console.log(response))
+  };
+}
+
 export const entryCreate = (newEntry) => {
   console.log(baseUrl);
-  return {
+  return (dispatch) => {
+    let url = baseUrl + '/entries';
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json', }, 
+      body: JSON.stringify(newEntry)
+    })
+      .then((response) => console.log(response))
+  };
+};
+
+const entryCreateSuccess = (dispatch, newEntry) => {
+  dispatch({
     type: ENTRY_CREATE,
     payload: newEntry
-  };
+  });
+};
+
+const entryCreateFail = (dispatch, error) => {
+  console.log(error);
 };
 
 export const entryUpdate = ({ prop, value }) => {
