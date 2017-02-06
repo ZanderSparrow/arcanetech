@@ -2,11 +2,13 @@ import {
   ENTRY_CREATE,
   ENTRY_UPDATE
 } from './types';
+import { baseUrl } from '../config';
 
-export const entryCreate = ({ title, description }) => {
+export const entryCreate = (newEntry) => {
+  console.log(baseUrl);
   return {
     type: ENTRY_CREATE,
-    payload: { title, description }
+    payload: newEntry
   };
 };
 
