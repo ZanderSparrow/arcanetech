@@ -4,7 +4,7 @@ import { View } from 'react-native';
 // This component exists so that the styles will be applied to the content
 const Card = (props) => {
   return (
-    <View style={styles.containerStyle}>
+    <View style={[styles.containerStyle, props.style]}>
       {props.children}
     </View>
   );
