@@ -1,3 +1,4 @@
+// Adding or changing entry in DB
 import { 
   ENTRY_CREATE,
   ENTRY_UPDATE

@@ -1,3 +1,4 @@
+// Selected entry - front end
 import { 
   ENTRY_SELECT
 } from './types';

@@ -1,3 +1,4 @@
+// Editing entry on the front end
 import { 
   ENTRY_EDIT
 } from './types';
