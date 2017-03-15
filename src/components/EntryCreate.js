@@ -8,6 +8,10 @@ class EntryCreate extends Component {
     this.props.entryEdit({ prop, value });
   }
 
+  onSubmit() {
+    this.props.entryCreate(this.props.entry);
+  }
+
   render() {
     return (
       <Card>
@@ -15,7 +19,7 @@ class EntryCreate extends Component {
           <Input 
             label={'Name'}
             placeholder={'Name the technology.'}
-            value={this.props.title}
+            value={this.props.entry.title}
             onChange={this.onEntryChange.bind(this, 'title')}
           />
         </CardSection>
@@ -23,12 +27,12 @@ class EntryCreate extends Component {
           <Input 
             label={'Function'}
             placeholder={'Describe what the arcane technology does.'}
-            value={this.props.description}
+            value={this.props.entry.description}
             onChange={this.onEntryChange.bind(this, 'description')}
           />
         </CardSection>
         <CardSection>
-          <Button>
+          <Button onPress={this.onSubmit.bind(this)}>
             Add to Library
           </Button>
         </CardSection>
@@ -38,9 +42,7 @@ class EntryCreate extends Component {
 }
 
 const mapStateToProps = (state) => {
-  let { title, description } = state.entry;
-
-  return { title, description };
+  return { entry: state.entry };
 };
 
 export default connect(mapStateToProps, { entryCreate, entryEdit })(EntryCreate);
